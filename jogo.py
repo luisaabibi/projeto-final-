@@ -2,7 +2,7 @@ import py
 import pygame 
 pygame.init()
 
-WIDTH = 1000
+WIDTH = 1200
 HEIGHT = 600
 window = pygame.display.set_mode((WIDTH, HEIGHT))
 
@@ -13,7 +13,8 @@ FPS = 30
 
 game= True 
 
-image = pygame.image.load().convert()
+image = pygame.image.load('assets/img/fundo.jpg').convert()
+image=pygame.transform.scale(image, (WIDTH, HEIGHT))
 
 
 
@@ -23,7 +24,9 @@ while game :
         if event.type == pygame.QUIT :
             game = False 
 
-    window.fill((255, 255, 255))
+    window.fill((0, 0, 0))  # Preenche com a cor branca
+    window.blit(image, (0, 0))
+
     pygame.display.update()
 
 pygame.quit()
