@@ -51,5 +51,29 @@ while game :
 
     all_sprites.draw(window)
     pygame.display.update()
+player = "(img.fox)"
+while game:
+    clock.tick(FPS)
+
+    
+    for event in pygame.event.get():
+    
+        if event.type == pygame.QUIT:
+            game = False
+        
+        if event.type == pygame.KEYDOWN:
+           
+            if event.key == pygame.K_LEFT:
+                player.speedx -= 8
+            if event.key == pygame.K_RIGHT:
+                player.speedx += 8
+       
+        if event.type == pygame.KEYUP:
+           
+            if event.key == pygame.K_LEFT:
+                player.speedx += 8
+            if event.key == pygame.K_RIGHT:
+                player.speedx -= 8
+
 
 pygame.quit()
