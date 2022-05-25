@@ -13,10 +13,11 @@ FPS = 30
 
 game= True 
 
-image = pygame.image.load('assets/img/fundo.jpg').convert()
-image=pygame.transform.scale(image, (WIDTH, HEIGHT))
+image = pygame.image.load('assets/img/fundo2.jpg').convert()
+image=pygame.transform.scale(image, (2400, HEIGHT))
 
 
+i=0
 
 while game :
     clock.tick(FPS)
@@ -24,9 +25,15 @@ while game :
         if event.type == pygame.QUIT :
             game = False 
 
-    window.fill((0, 0, 0))  # Preenche com a cor branca
-    window.blit(image, (0, 0))
+    window.fill((0, 0, 0))  # Preenche com a cor branca]
 
+
+    window.blit(image, (i, 0))
+
+    if i == -1200:
+        i=0
+    else:
+        i-=5
     pygame.display.update()
 
 pygame.quit()
