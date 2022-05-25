@@ -51,6 +51,7 @@ while game :
 
     all_sprites.draw(window)
     pygame.display.update()
+    
 player = "(img.fox)"
 while game:
     clock.tick(FPS)
