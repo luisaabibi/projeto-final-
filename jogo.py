@@ -34,7 +34,7 @@ while game :
 
 
     if len(all_cogumelos) < 10:
-        cogumelo = Cogumelo(cogumelo_img, WIDTH + random.randint(0, 1000), 400)
+        cogumelo = Cogumelo(cogumelo_img, WIDTH + random.randint(0, 2400), 400)
         all_cogumelos.add(cogumelo)
         all_sprites.add(cogumelo)
 
