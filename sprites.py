@@ -13,3 +13,13 @@ class Cogumelo(pygame.sprite.Sprite):
         self.rect.x += self.speedx
         if self.rect.x < -50:
             self.kill()
+
+
+class fox(pygame.sprite.Sprite):
+    def __init__(self, assets, x, y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = assets['raposa2']
+        self.rect = self.image.get_rect()
+        self.rect.x = 100
+        self.rect.y = 40
+        self.speedx = 0
