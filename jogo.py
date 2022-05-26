@@ -34,11 +34,8 @@ while game :
             game = False 
 
 
-    if len(all_cogumelos) < 10:
-        distancia=200
-        '''if posicaox < 1000:
-            #distancia=random.randint(posicaox+200, 1200)
-            distancia=200'''
+    if len(all_cogumelos) < 30:
+
         cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(100,1200), 385)
         all_cogumelos.add(cogumelo)
         all_sprites.add(cogumelo)
