@@ -48,7 +48,7 @@ while game :
     all_sprites.add(cogumelo)
     posicaox=cogumelo.rect.x
 
-    pedra = Pedra(pedra_img, posicaox + random.randint(200,1000), 370)
+    pedra = Pedra(pedra_img, posicaox + random.randint(200,800), 370)
     all_pedras.add(pedra)
     all_sprites.add(pedra)
 
@@ -102,7 +102,7 @@ while game :
 
     
 
-while game:
+'''while game:
     clock.tick(FPS)
 
     
@@ -123,7 +123,7 @@ while game:
             if event.key == pygame.K_LEFT:
                 player.speedx += 8
             if event.key == pygame.K_RIGHT:
-                player.speedx -= 8
+                player.speedx -= 8'''
 
 
 pygame.quit()
