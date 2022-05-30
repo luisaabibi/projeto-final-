@@ -22,3 +22,14 @@ class Pedra(pygame.sprite.Sprite):
         self.rect.x = x
         self.rect.y = y
         self.speedx = -5
+
+
+class fox(pygame.sprite.Sprite):
+    def __init__(self, assets, x, y):
+        pygame.sprite.Sprite.__init__(self)
+        self.image = assets['raposa2']
+        self.rect = self.image.get_rect()
+        self.rect.x = 100
+        self.rect.y = 40
+        self.speedx = 0
+
