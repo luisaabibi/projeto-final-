@@ -23,8 +23,13 @@ image=pygame.transform.scale(image, (2400, HEIGHT))
 cogumelo_img= pygame.image.load('assets/img/cogumelo.png').convert_alpha()
 cogumelo_img= pygame.transform.scale(cogumelo_img, (50, 50))
 
+pedra_img = pygame.image.load('assets/img/pedra.jpg').convert_alpha()
+cogumelo_img= pygame.transform.scale(cogumelo_img, (80, 80))
+
+
 all_sprites = pygame.sprite.Group()
 all_cogumelos = pygame.sprite.Group()
+all_pedras = pygame.sprite.Group()
 
 i=0
 while game :
@@ -41,6 +46,9 @@ while game :
         all_sprites.add(cogumelo)
 
         posicaox=cogumelo.rect.x
+
+    if len(all_cogumelos) < 40 :
+        pedra = Pedra(pedra_img, posicaox + random.randint(100,1200), 385)
     
 
     all_sprites.update()
