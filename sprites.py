@@ -1,8 +1,8 @@
 import pygame
 
 class Cogumelo(pygame.sprite.Sprite):
-    def _init_(self, img, x, y):
-        pygame.sprite.Sprite._init_(self)
+    def __init__(self, img, x, y):
+        pygame.sprite.Sprite.__init__(self)
         self.image = img
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -15,8 +15,8 @@ class Cogumelo(pygame.sprite.Sprite):
             self.kill()
 
 class Pedra(pygame.sprite.Sprite):
-    def _init_(self, img, x, y):
-        pygame.sprite.Sprite._init_(self)
+    def __init__(self, img, x, y):
+        pygame.sprite.Sprite.__init__(self)
         self.image = img
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -29,8 +29,8 @@ class Pedra(pygame.sprite.Sprite):
             self.kill()
 
 class Cobra(pygame.sprite.Sprite):
-    def _init_(self, img, x, y):
-        pygame.sprite.Sprite._init_(self)
+    def __init__(self, img, x, y):
+        pygame.sprite.Sprite.__init__(self)
         self.image = img
         self.rect = self.image.get_rect()
         self.rect.x = x
@@ -45,8 +45,8 @@ class Cobra(pygame.sprite.Sprite):
 
 
 class Fox(pygame.sprite.Sprite):
-    def _init_(self, assets, x, y):
-        pygame.sprite.Sprite._init_(self)
+    def __init__(self, assets, x, y):
+        pygame.sprite.Sprite.__init__(self)
         self.image = assets['raposa2']
         self.rect = self.image.get_rect()
         self.rect.x = 100

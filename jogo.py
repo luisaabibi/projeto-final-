@@ -1,5 +1,5 @@
 import random
-import py
+import py 
 import pygame
 
 from sprites import Cogumelo
@@ -102,7 +102,7 @@ while game :
 
     
 
-'''while game:
+while game:
     clock.tick(FPS)
 
     
@@ -123,7 +123,7 @@ while game :
             if event.key == pygame.K_LEFT:
                 player.speedx += 8
             if event.key == pygame.K_RIGHT:
-                player.speedx -= 8'''
+                player.speedx -= 8
 
 
 pygame.quit()
