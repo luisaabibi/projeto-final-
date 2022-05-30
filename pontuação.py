@@ -1,5 +1,5 @@
 score_value=0
-font=pygame.font.Font('freesansbold.ttf',32)
+font=pygame.font.Font('ADELIA.otf',32)
 textX = 10
 testy = 10
 def show_score(x,y):
