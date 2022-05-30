@@ -15,12 +15,13 @@ clock = pygame.time.Clock()
 FPS = 30
 
 game= True 
+posicaox=0
 
 image = pygame.image.load('assets/img/fundo2.jpg').convert()
 image=pygame.transform.scale(image, (2400, HEIGHT))
 
 cogumelo_img= pygame.image.load('assets/img/cogumelo.png').convert_alpha()
-cogumelo_img= pygame.transform.scale(cogumelo_img, (40, 40))
+cogumelo_img= pygame.transform.scale(cogumelo_img, (50, 50))
 
 all_sprites = pygame.sprite.Group()
 all_cogumelos = pygame.sprite.Group()
@@ -33,11 +34,14 @@ while game :
             game = False 
 
 
-    if len(all_cogumelos) < 10:
-        cogumelo = Cogumelo(cogumelo_img, WIDTH + random.randint(0, 2400), 400)
+    if len(all_cogumelos) < 30:
+
+        cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(100,1200), 385)
         all_cogumelos.add(cogumelo)
         all_sprites.add(cogumelo)
 
+        posicaox=cogumelo.rect.x
+    
 
     all_sprites.update()
 
