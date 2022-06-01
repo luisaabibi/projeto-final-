@@ -53,6 +53,8 @@ class Fox(pygame.sprite.Sprite):
         self.rect.y = y
         self.speedy = 0
     def update(self):
-            self.rect.y += self.speedy
-            if self.rect.y < -50:
-                self.kill()
+        self.rect.y += self.speedy
+        if self.rect.y < -50:
+            self.kill()
+       
+       

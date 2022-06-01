@@ -38,14 +38,35 @@ all_sprites = pygame.sprite.Group()
 all_cogumelos = pygame.sprite.Group()
 all_pedras = pygame.sprite.Group()
 all_cobras= pygame.sprite.Group()
-
-
+fox = Fox(fox_img, 150, 295)
 i=0
+
+
+
 while game :
     clock.tick(FPS)
+    fox.rect.y == 295
+    fox.speedy=0
+    all_sprites.add(fox)
+
+
+    '''keys = pygame.key.get_pressed()
+
+    if keys[pygame.K_SPACE]:
+        fox.speedy =- 100
+        print(keys[pygame.K_SPACE])'''
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT :
             game = False 
+        
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_SPACE:
+                fox.speedy =- 100
+
+        if event.type == pygame.KEYUP:
+            if event.key == pygame.K_SPACE:
+                fox.speedy =+ 100
 
     cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(200,1000), 385)
     all_cogumelos.add(cogumelo)
@@ -64,49 +85,29 @@ while game :
 
     posicaox=cobra.rect.x
 
+    
+    
 
-    fox = Fox(fox_img, 150, 295)
-    all_sprites.add(fox)
-
-
+    if i == -WIDTH:
+        i=0
+        print("a")
+    else:
+        i-=5
     
 
     all_sprites.update()
 
     window.fill((0, 0, 0))  # Preenche com a cor branca
+    
     window.blit(image, (i, 0))
+    
 
-    if i == -WIDTH:
-        i=0
-    else:
-        i-=5
+
 
     all_sprites.draw(window)
     pygame.display.update()
 
 
 
-    
-player = Fox()
-
-while game:
-    clock.tick(FPS)
-
-    for event in pygame.event.get():
-    
-        if event.type == pygame.QUIT:
-            game = False
-        
-        if event.type == pygame.KEYDOWN:
-        
-            if event.key == pygame.K_SPACE:
-                player.speedy -= 10
-
-        if event.type == pygame.KEYUP:
-        
-            if event.key == pygame.K_SPACE:
-                player.speedy += 10 
-        
 
 
-pygame.quit()
