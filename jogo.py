@@ -1,9 +1,10 @@
 import random
 import pygame
 
-from sprites import Cogumelo
+from sprites import Cogumelo, Fox
 from sprites import Pedra 
 from sprites import Cobra
+from sprites import Fox
 pygame.init()
 
 WIDTH = 1200
@@ -30,10 +31,14 @@ pedra_img= pygame.transform.scale(pedra_img, (80, 80))
 cobra_img = pygame.image.load('assets/img/cobra.png').convert_alpha()
 cobra_img= pygame.transform.scale(cobra_img, (60, 60))
 
+fox_img = pygame.image.load('assets/img/raposa.png').convert_alpha()
+fox_img= pygame.transform.scale(fox_img, (200, 200))
+
 all_sprites = pygame.sprite.Group()
 all_cogumelos = pygame.sprite.Group()
 all_pedras = pygame.sprite.Group()
 all_cobras= pygame.sprite.Group()
+
 
 i=0
 while game :
@@ -59,27 +64,9 @@ while game :
 
     posicaox=cobra.rect.x
 
-    '''if len(all_cogumelos) < 2:
 
-        cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(100,1200), 385)
-        all_cogumelos.add(cogumelo)
-        all_sprites.add(cogumelo)
-
-        posicaox=cogumelo.rect.x
-
-    if len(all_pedras) < 2 :
-        pedra = Pedra(pedra_img, posicaox + random.randint(100,1200), 370)
-        all_pedras.add(pedra)
-        all_sprites.add(pedra)
-
-        posicaox=pedra.rect.x
-
-    if len(all_cobras) < 2 :
-        cobra = Cobra(cobra_img, posicaox + random.randint(100,1200), 385)
-        all_pedras.add(cobra)
-        all_sprites.add(cobra)
-
-        posicaox=cobra.rect.x'''
+    fox = Fox(fox_img, 150, 295)
+    all_sprites.add(fox)
 
 
     
@@ -100,11 +87,11 @@ while game :
 
 
     
+player = Fox()
 
 while game:
     clock.tick(FPS)
 
-    
     for event in pygame.event.get():
     
         if event.type == pygame.QUIT:
@@ -112,17 +99,14 @@ while game:
         
         if event.type == pygame.KEYDOWN:
         
-            if event.key == pygame.K_LEFT:
-                player.speedx -= 8
-            if event.key == pygame.K_RIGHT:
-                player.speedx += 8
-    
+            if event.key == pygame.K_SPACE:
+                player.speedy -= 10
+
         if event.type == pygame.KEYUP:
         
-            if event.key == pygame.K_LEFT:
-                player.speedx += 8
-            if event.key == pygame.K_RIGHT:
-                player.speedx -= 8
+            if event.key == pygame.K_SPACE:
+                player.speedy += 10 
+        
 
 
 pygame.quit()
