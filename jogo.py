@@ -1,5 +1,4 @@
 import random
-import py 
 import pygame
 
 from sprites import Cogumelo

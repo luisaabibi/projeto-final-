@@ -1,3 +1,10 @@
+from time import clock_gettime
+import pygame
+import py 
+
+clock_gettime
+
+
 score_value=0
 font=pygame.font.Font('ADELIA.otf',32)
 textX = 10
