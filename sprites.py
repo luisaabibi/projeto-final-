@@ -45,11 +45,14 @@ class Cobra(pygame.sprite.Sprite):
 
 
 class Fox(pygame.sprite.Sprite):
-    def __init__(self, assets, x, y):
+    def __init__(self, img,x, y):
         pygame.sprite.Sprite.__init__(self)
-        self.image = assets['raposa2']
+        self.image = img
         self.rect = self.image.get_rect()
-        self.rect.x = 100
-        self.rect.y = 40
-        self.speedx = 0
-
+        self.rect.x = x
+        self.rect.y = y
+        self.speedy = 0
+    def update(self):
+            self.rect.y += self.speedy
+            if self.rect.y < -50:
+                self.kill()
