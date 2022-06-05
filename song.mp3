@@ -1,0 +1,24 @@
+import path
+from pygame import QUIT, mixer
+import pygame 
+from sqlalchemy import false
+def play_music(musica):
+    mixer.music.load(musica)
+    mixer.set_volume(0.7)
+    mixer.music.play(-1)
+
+
+while rodando:
+    FPS.tick(FPS)
+
+musica = path.join("url")
+for evento in pygame.type.get():
+    if evento.type == pygame.QUIT:
+        estado = QUIT
+        rodando = false
+        if evento.type == pygame.KEYUP:
+            estado = GAME
+            rodando = false
+            if estado == GAME:
+                mixer.music.stop()
+            "nomearquivo".play_music(musica)
