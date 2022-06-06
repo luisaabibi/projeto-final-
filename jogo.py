@@ -82,23 +82,34 @@ while jogo:
 
     pygame.display.update()
 
+# Loop principal
+while game:
+    clock.tick(FPS)
+    fox.rect.y == 295
+    fox.speedy = 0
+    all_sprites.add(fox)
 
+    # Pega o valor do tempo
+    tempo = pygame.time.get_ticks()
 
-while not crash :
-    gameDisplay.fill((0, 0, 0))
+    # verifica as ações do player
     for event in pygame.event.get():
+
         if event.type == pygame.QUIT:
-            crash = True 
-        if event.type== pygame.KEYDOWN:
-            start = True 
-            if event.key == pygame.K_DOWN :
-                slow_motion= True 
-            if event.key == pygame.K_UP :
-                if height >= 110 : jump= True 
-        if event.type == pygame.KEYUP:
-            slow_motion = False 
-            if event.key == pygame.K_DOWN :
-                state = run 
+            game = False
+
+    teclas = pygame.key.get_pressed()
+    if teclas[pygame.K_SPACE] and not fox.dino_pulando:
+        fox.dino_padrao = False
+        fox.dino_pulando = True
+        fox.v_jump = 9
+    elif not (fox.dino_pulando):
+        fox.dino_padrao = True
+        fox.dino_pulando = False
+
+
+
+
     
 
 
