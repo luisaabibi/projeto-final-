@@ -71,6 +71,18 @@ all_pedras.add(cobra)
 all_sprites.add(cobra)
 posicaox = cobra.rect.x
 
+while jogo:
+    window.blit(imagem_inicial, (0,0))
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            jogo = False
+            game = False
+        if event.type == pygame.KEYDOWN:
+            jogo = False
+
+    pygame.display.update()
+
+
 
 while not crash :
     gameDisplay.fill((0, 0, 0))
