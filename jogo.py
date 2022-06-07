@@ -156,6 +156,43 @@ while game:
 
 
 
+    # Verifica as colisões
+    if colisao_pedra:
+        time.sleep(0.2)
+        window.blit(game_over,(0,0))
+        text = fonte.render("pontuação final: " + str(pontos), False, (255, 255, 255))
+        textRect = text.get_rect()
+        textRect.center = (580, 400)
+        window.blit(text, textRect)
+        pygame.display.update()
+        time.sleep(3.0)
+        game = False
+
+    if colisao_cogumelo:
+        time.sleep(0.2)
+        window.blit(game_over,(0,0))
+        text = fonte.render("pontuação final: " + str(pontos), False, (255, 255, 255))
+        textRect = text.get_rect()
+        textRect.center = (580, 400)
+        window.blit(text, textRect)
+        pygame.display.update()
+        time.sleep(3.0)
+        game = False
+
+    if colisao_cobra:
+        time.sleep(0.2)
+        window.blit(game_over,(0,0))
+        text = fonte.render("pontuação final: " + str(pontos), False, (255, 255, 255))
+        textRect = text.get_rect()
+        textRect.center = (580, 400)
+        window.blit(text, textRect)
+        pygame.display.update()
+        time.sleep(3.0)
+        game = False
+    all_sprites.draw(window)
+
+
+
             
 
 
