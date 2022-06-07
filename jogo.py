@@ -26,6 +26,10 @@ pontos = 0
 posicaox = 0
 fonte = pygame.font.SysFont("comicsans", 30, True)
 
+# carrega e inicia a musica
+pygame.mixer.music.load('assets\som\som_crash_bandicoot.mp3')
+pygame.mixer.music.set_volume(0.15)
+pygame.mixer.music.play(loops=-1)
 
 image = pygame.image.load('assets/img/fundo2.jpg').convert()
 image=pygame.transform.scale(image, (2400, HEIGHT))
