@@ -139,6 +139,20 @@ while game:
 
         all_sprites.update()
 
+ # Preenche com a cor branca
+    window.fill((0, 0, 0))
+
+    window.blit(image, (i, 0))
+
+    colisao_cogumelo = pygame.sprite.spritecollide(
+        fox, all_cogumelos, True, pygame.sprite.collide_mask
+    )
+    colisao_pedra = pygame.sprite.spritecollide(
+        fox, all_pedras, True, pygame.sprite.collide_mask
+    )
+    colisao_cobra = pygame.sprite.spritecollide(
+        fox, all_cobras, True, pygame.sprite.collide_mask
+    )
 
 
 
