@@ -98,33 +98,35 @@ while game:
         if event.type == pygame.QUIT:
             game = False
 
-    teclas = pygame.key.get_pressed()
-    if teclas[pygame.K_SPACE] and not fox.dino_pulando:
-        fox.dino_padrao = False
-        fox.dino_pulando = True
-        fox.v_jump = 9
-    elif not (fox.dino_pulando):
-        fox.dino_padrao = True
-        fox.dino_pulando = False
+        teclas = pygame.key.get_pressed()
+    
+        if teclas[pygame.K_SPACE] and not fox.dino_pulando:
+            fox.dino_padrao = False
+            fox.dino_pulando = True
+            fox.v_jump = 9
+        elif not (fox.dino_pulando):
+            fox.dino_padrao = True
+            fox.dino_pulando = False
 
 
-    if tempo % 30 == 0:
-            cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(200, 1000), 385)
-            all_cogumelos.add(cogumelo)
-            all_sprites.add(cogumelo)
-            posicaox = cogumelo.rect.x
+        if tempo % 30 == 0:
+                cogumelo = Cogumelo(cogumelo_img, posicaox + random.randint(200, 1000), 385)
+                all_cogumelos.add(cogumelo)
+                all_sprites.add(cogumelo)
+                posicaox = cogumelo.rect.x
 
+        
         if tempo % 60 == 0:
-            pedra = Pedra(pedra_img, posicaox + random.randint(200, 800), 370)
-            all_pedras.add(pedra)
-            all_sprites.add(pedra)
-            posicaox = pedra.rect.x
+                pedra = Pedra(pedra_img, posicaox + random.randint(200, 800), 370)
+                all_pedras.add(pedra)
+                all_sprites.add(pedra)
+                posicaox = pedra.rect.x
 
         if tempo % 90 == 0:
-            cobra = Cobra(cobra_img, posicaox + random.randint(200, 1000), 385)
-            all_pedras.add(cobra)
-            all_sprites.add(cobra)
-            posicaox = cobra.rect.x
+                cobra = Cobra(cobra_img, posicaox + random.randint(200, 1000), 385)
+                all_pedras.add(cobra)
+                all_sprites.add(cobra)
+                posicaox = cobra.rect.x
 
         if i == -WIDTH:
             i = 0
@@ -136,7 +138,7 @@ while game:
 
 
 
-        
+            
 
 
 
