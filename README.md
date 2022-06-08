@@ -9,3 +9,4 @@
 # https://img2.gratispng.com/20180221/sye/kisspng-snakes-and-ladders-drawing-clip-art-snake-5a8e4cc477f162.4955727015192752044913.jpg
 # https://images.vexels.com/media/users/3/145827/isolated/preview/357f06ecbaaa77d750259c459c0ed55f-ilustracao-de-pedra-redonda.png
 
+# vídeo jogo em funcionamento: https://youtu.be/PlPVOb54mOE
