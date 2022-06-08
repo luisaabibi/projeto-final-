@@ -50,7 +50,7 @@ fox_img= pygame.transform.scale(fox_img, (200, 200))
 imagem_inicial = pygame.image.load("assets/img/fundoinicio.png").convert_alpha()
 imagem_inicial = pygame.transform.scale(imagem_inicial, (WIDTH, HEIGHT))
 
-game_over = pygame.image.load("assets/img/gameover.png")
+game_over = pygame.image.load("assets/img/game over.png")
 game_over = pygame.transform.scale(game_over, (WIDTH, HEIGHT))
 
 all_sprites = pygame.sprite.Group()
@@ -104,13 +104,13 @@ while game:
 
         teclas = pygame.key.get_pressed()
     
-        if teclas[pygame.K_SPACE] and not fox.dino_pulando:
-            fox.dino_padrao = False
-            fox.dino_pulando = True
+        if teclas[pygame.K_SPACE] and not fox.fox_pulando:
+            fox.fox_padrao = False
+            fox.fox_pulando = True
             fox.v_jump = 9
-        elif not (fox.dino_pulando):
-            fox.dino_padrao = True
-            fox.dino_pulando = False
+        elif not (fox.fox_pulando):
+            fox.fox_padrao = True
+            fox.fox_pulando = False
 
 
         if tempo % 30 == 0:
@@ -190,7 +190,7 @@ while game:
         time.sleep(3.0)
         game = False
     all_sprites.draw(window)
-    
+
  # Atualiza os pontos
     pontos += 10
     text = fonte.render("pontos: " + str(pontos), False, (0, 0, 0))
