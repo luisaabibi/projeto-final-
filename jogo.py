@@ -190,6 +190,18 @@ while game:
         time.sleep(3.0)
         game = False
     all_sprites.draw(window)
+    
+ # Atualiza os pontos
+    pontos += 10
+    text = fonte.render("pontos: " + str(pontos), False, (0, 0, 0))
+    textRect = text.get_rect()
+    textRect.center = (150, 40)
+    window.blit(text, textRect)
+
+    # Imprime a pontuação no terminal
+    if game == False:
+        print(f"Sua pontuação foi de {pontos}")
+    pygame.display.update()
 
 
 
